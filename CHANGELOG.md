@@ -5,6 +5,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This changelog adheres to [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+## [0.2.1] - released 2018-10-01
+### Added
+- Added `docker_run_options` method to the `with_docker_container` RSpec context.
+  This can be overwritten to pass additional options to the `docker run` command
+
+### Fixed
+- In the `with_docker_container` RSpec context, fail if the `docker run` command
+  exits with a non-zero exit code
+- In the `with_docker_container` RSpec context, print container logs if the
+  container ends up in a known bad state
+
 ## [0.2.0] - released 2018-09-17
 ### Fixed
 - If an invalid parameter is passed, exit with a non-zero exit code.
@@ -69,7 +80,8 @@ This changelog adheres to [Keep a CHANGELOG](http://keepachangelog.com/).
 ### Added
 - Initial port of the automation from [puppet-in-docker](https://github.com/puppetlabs/puppet-in-docker)
 
-[Unreleased]: https://github.com/puppetlabs/puppet_docker_tools/compare/0.2.0...HEAD
+[Unreleased]: https://github.com/puppetlabs/puppet_docker_tools/compare/0.2.1...HEAD
+[0.2.1]: https://github.com/puppetlabs/puppet_docker_tools/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/puppetlabs/puppet_docker_tools/compare/0.1.5...0.2.0
 [0.1.5]: https://github.com/puppetlabs/puppet_docker_tools/compare/0.1.4...0.1.5
 [0.1.4]: https://github.com/puppetlabs/puppet_docker_tools/compare/0.1.3...0.1.4
