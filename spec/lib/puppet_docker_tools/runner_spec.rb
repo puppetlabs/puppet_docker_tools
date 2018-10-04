@@ -83,7 +83,7 @@ describe PuppetDockerTools::Runner do
       allow(File).to receive(:exist?).with('/tmp/test-image/Dockerfile.test').and_return(true)
       expect(File).to receive(:read).with('/tmp/test-image/Dockerfile.test').and_return(read_dockerfile)
       expect(PuppetDockerTools::Utilities).to receive(:get_value_from_env).with('version', namespace: 'org.label-schema', directory: '/tmp/test-image', dockerfile: 'Dockerfile.test').and_return(nil)
-      expect(Open3).to receive(:popen2e).with('docker', 'build', '--build-arg', 'vcs_ref=b0c5ead01b6cabdb3f01871bce699be165c3288f', '--build-arg', 'build_date=2018-06-08T17:18:13Z', '--no-cache', '--file', 'Dockerfile.test', '--tag', 'test/test-image:latest', runner.directory)
+      expect(Open3).to receive(:popen2e).with('docker', 'build', '--build-arg', 'vcs_ref=b0c5ead01b6cabdb3f01871bce699be165c3288f', '--build-arg', 'build_date=2018-06-08T17:18:13Z', '--no-cache', '--file', '/tmp/test-image/Dockerfile.test', '--tag', 'test/test-image:latest', runner.directory)
       local_runner = create_runner(directory: '/tmp/test-image', repository: 'test', namespace: 'org.label-schema', dockerfile: 'Dockerfile.test')
       local_runner.build(no_cache: true)
     end
