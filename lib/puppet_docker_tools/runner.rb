@@ -69,7 +69,7 @@ class PuppetDockerTools
       end
 
       if dockerfile != "Dockerfile"
-        build_options << ['--file', dockerfile]
+        build_options << ['--file', File.join(directory, dockerfile)]
       end
 
       tags = []
