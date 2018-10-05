@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This changelog adheres to [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+## [0.2.2] - released 2018-10-05
+### Fixed
+- We weren't passing the path of the dockerfile to `docker build` which caused
+  failures when working with non-default dockerfiles
+
 ## [0.2.1] - released 2018-10-01
 ### Added
 - Added `docker_run_options` method to the `with_docker_container` RSpec context.
@@ -80,7 +85,8 @@ This changelog adheres to [Keep a CHANGELOG](http://keepachangelog.com/).
 ### Added
 - Initial port of the automation from [puppet-in-docker](https://github.com/puppetlabs/puppet-in-docker)
 
-[Unreleased]: https://github.com/puppetlabs/puppet_docker_tools/compare/0.2.1...HEAD
+[Unreleased]: https://github.com/puppetlabs/puppet_docker_tools/compare/0.2.2...HEAD
+[0.2.2]: https://github.com/puppetlabs/puppet_docker_tools/compare/0.2.1...0.2.2
 [0.2.1]: https://github.com/puppetlabs/puppet_docker_tools/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/puppetlabs/puppet_docker_tools/compare/0.1.5...0.2.0
 [0.1.5]: https://github.com/puppetlabs/puppet_docker_tools/compare/0.1.4...0.1.5
